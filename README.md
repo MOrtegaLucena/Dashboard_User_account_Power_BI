@@ -63,9 +63,9 @@ El tablero presenta los siguientes indicadores clave:
 
 ### Conexión a Fuentes de Datos
 
-- Conexión a una base de datos web para obtener los datos de usuarios, onboarding y cancelaciones.
+- Conexión a una base de **datos web** para obtener los datos de usuarios, onboarding y cancelaciones.
 
-- Conexión a una base de datos PostgreSQL para acceder a:
+- Conexión a una base de datos **PostgreSQL** para acceder a:
 
     - Tabla de movimientos/transacciones de usuarios
 
