@@ -20,45 +20,104 @@ Con el fin de **evaluar la efectividad del proceso de incorporación de nuevos u
 
 
 - **Detección de tendencias temporales:** con la evolución mensual del onboarding, es posible anticipar comportamientos estacionales o problemas recurrentes.
+  
 
-Información Visualizada
+## 📊 Información Visualizada
+
 El tablero presenta los siguientes indicadores clave:
-Total de cuentas creadas
+
+- **Total de cuentas creadas**
 
 
-Total de clientes activos: usuarios que han utilizado algún producto de la app, evidenciado por al menos un movimiento/transacción en su cuenta.
+- **Total de clientes activos:** usuarios que han utilizado algún producto de la app, evidenciado al menos un movimiento/transacción en su cuenta.
 
 
-Total de clientes inactivos: usuarios que no han realizado movimientos en su cuenta durante un período determinado.
+- **Total de clientes inactivos:** usuarios que no han realizado movimientos en su cuenta durante un período determinado.
 
 
-Gráfico de líneas con la evolución diaria, mensual o trimestral de altas y bajas de cuentas.
+- **Gráfico de líneas con la evolución** diaria, mensual o trimestral de altas y bajas de cuentas.
 
 
-Dos gráficos de anillos que segmentan:
+- **Dos gráficos de anillos que segmentan:**
+
+    **Cuentas comerciales vs. personales**
+
+    **Personas físicas vs. personas jurídicas**
 
 
-Cuentas comerciales vs. personales
+**Toda esta información puede ser filtrada por:**
 
+- Rango de fechas
 
-Personas físicas vs. personas jurídicas
+- Tipo de producto
 
+- Jurisdicción
 
-Toda esta información puede ser filtrada por:
-Rango de fechas
+- Estado de la cuenta
 
+- Tipo de cuenta (comercial o personal)
 
-Tipo de producto
+- Tipo de usuario (PF o PJ)
 
+## ⚙️ Procedimiento de Desarrollo
 
-Jurisdicción
+### Conexión a Fuentes de Datos
 
+- Conexión a una base de datos web para obtener los datos de usuarios, onboarding y cancelaciones.
 
-Estado de la cuenta
+- Conexión a una base de datos PostgreSQL para acceder a:
 
+    - Tabla de movimientos/transacciones de usuarios
 
-Tipo de cuenta (comercial o personal)
+    - Tabla de cargas impositivas o comisiones por operaciones
 
+Se utilizó el modo **Direct Query** para optimizar el rendimiento, reduciendo el uso de almacenamiento y acelerando la actualización de datos.
 
-Tipo de usuario (PF o PJ)
+### Transformación y Limpieza de Datos
+
+Se realizaron los siguientes pasos:
+
+- Eliminación de columnas innecesarias
+
+- Corrección de tipos de datos
+
+- Manejo de valores nulos, duplicados y errores
+
+- Unificación de formatos (fechas, monedas, etc.)
+
+- Creación de columnas condicionales para identificar si un movimiento fue "completado" o "fallido", según códigos definidos en la base de datos
+
+- Adición de una columna personalizada para mostrar los montos con decimales y su signo (+/-), según si se trata de ingresos o egresos
+
+### Modelado de Datos
+
+- Relación entre la tabla de “Usuarios” y la de “Movimientos de Usuarios” mediante un ID común.
+
+- Relación adicional entre “Movimientos de Usuarios” y la tabla de “Cargas Impositivas/Comisiones”.
+
+- Creación de una tabla de referencia de Jurisdicciones, relacionada con “Movimientos de Usuarios”.
+
+### Diseño de Visualizaciones
+
+Se priorizó una presentación clara, funcional y atractiva, con las siguientes decisiones de diseño:
+
+- **Tarjetas** para mostrar cantidad total de usuarios, activos e inactivos
+
+- **Gráfico de líneas** para representar la evolución de altas y bajas
+
+- **Gráficos de anillos** para segmentar tipos de cuenta y tipo de usuario
+
+- **Segmentaciones de datos** (Slicers) para aplicar filtros de forma intuitiva
+
+- Aplicación de buenas prácticas de visualización: paleta de colores, alineación, espaciado y jerarquía visual
+
+- Configuración de interacciones entre objetos visuales para permitir el cruce de filtros, entre los objetos visuales de la página, de tal manera que haciendo click en cualquier objeto visual, automáticamente se filtren el resto de los objetos de la página, permitiendo un Tablero completamente dinámico y funcional.
+
+### Publicación y Distribución
+
+**1)** Publicación del reporte en el servicio Power BI (Power BI Service)
+
+**2)** Configuración de actualizaciones automáticas
+
+**3)** Asignación de permisos de acceso a los stakeholders
 
