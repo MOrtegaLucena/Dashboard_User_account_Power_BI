@@ -87,7 +87,13 @@ Se realizaron los siguientes pasos:
 
 - Creación de columnas condicionales para identificar si un movimiento fue "completado" o "fallido", según códigos definidos en la base de datos
 
+  <img width="941" height="159" alt="image" src="https://github.com/user-attachments/assets/7bca26e5-7a2f-415f-bcf7-0cf34648c25b" />
+
+
 - Adición de una columna personalizada para mostrar los montos con decimales y su signo (+/-), según si se trata de ingresos o egresos
+
+<img width="947" height="604" alt="image" src="https://github.com/user-attachments/assets/9a75b0ae-d9bd-4663-96af-e2a4bbf1cb6c" />
+
 
 ### Modelado de Datos
 
@@ -96,6 +102,9 @@ Se realizaron los siguientes pasos:
 - Relación adicional entre “Movimientos de Usuarios” y la tabla de “Cargas Impositivas/Comisiones”.
 
 - Creación de una tabla de referencia de Jurisdicciones, relacionada con “Movimientos de Usuarios”.
+
+<img width="925" height="693" alt="image" src="https://github.com/user-attachments/assets/dea263b2-cdc7-414f-8eb0-d89b4c62126b" />
+
 
 ### Diseño de Visualizaciones
 
@@ -112,6 +121,13 @@ Se priorizó una presentación clara, funcional y atractiva, con las siguientes 
 - Aplicación de buenas prácticas de visualización: paleta de colores, alineación, espaciado y jerarquía visual
 
 - Configuración de interacciones entre objetos visuales para permitir el cruce de filtros, entre los objetos visuales de la página, de tal manera que haciendo click en cualquier objeto visual, automáticamente se filtren el resto de los objetos de la página, permitiendo un Tablero completamente dinámico y funcional.
+
+    Ejemplo de Tablero estableciendo un filtro de fecha:
+      <img width="935" height="522" alt="image" src="https://github.com/user-attachments/assets/ac6f4e0f-9904-4d53-b625-731a78cc788d" />
+
+    Ejemplo de Tablero filtrando por fecha y teniendo en cuenta sólo las cuentas comerciales, al realizar un click sobre el gráfico de anillos ”Account Types”:
+    <img width="936" height="523" alt="image" src="https://github.com/user-attachments/assets/a2c38f31-13fd-426a-b9fb-2923228b1bf3" />
+
 
 ### Publicación y Distribución
 
