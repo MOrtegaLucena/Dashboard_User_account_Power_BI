@@ -64,6 +64,10 @@ El tablero presenta los siguientes indicadores clave:
 ### Conexión a Fuentes de Datos
 
 - Conexión a una base de **datos web** para obtener los datos de usuarios, onboarding y cancelaciones.
+    - **Extraer y leer datos de archivo en formato JSON.**
+
+      <img width="1698" height="685" alt="image" src="https://github.com/user-attachments/assets/83797584-9d78-4a18-b34c-1a85968674c8" />
+
 
 - Conexión a una base de datos **PostgreSQL** para acceder a:
 
